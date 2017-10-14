@@ -1,0 +1,39 @@
+﻿Regular expressions key
+
+Create object by calling :
+variable = name.search(findall)( r '#string(or str containing variable) here#') note that the r at the beginning makes it a raw string.
+	*Note can assign mutilple searches to one variable
+variable = name.sub( r '#string to sub inhere#', text were searching) note that sub string cane use \1(2,3etc) to sub in that specific group as found using the compile code
+
+Syntax:
+	
+	Parentheses () seperates string into groups
+	a '?' matches a group ZERO or ONE times    ( a phone number with or without area code)
+	a '*' matches a group ZERO or MORE times (Prefixes to a name)
+	a '+' matches a group ONE or MORE times(trailing characters)
+	curly braces '{}' match a SPECIFIC number of times
+		Note, curly braces will work like lists {2,5} will look for a match in a range of 2 to 5 			times. Also python uses greedy matching by default meaning it will return a match for 			the biggest string allowed unless specified by a '?' after the curly braces
+
+Character classes
+	. looks for anything that is NOT new line
+	\	d – digit 0-9	
+	\D – any character NOT a digit
+	\w- any character that is a letter, underscore, or numeric digit
+	\W- any character NOT a letter, underscore, or numeric digit
+	\s- any character that is a space, tab or newline
+	\S- any character NOT a space, tab, or newline
+
+defining your own character class
+
+	*name* = re.compile(r'[aeiouAEIOU]' ): brackets and search key. Python will understand stuff like [a-f] meaning to search for letters a through f,
+
+	add a carat to the beginning of class to search for anything not that:
+		r'[^aeiou]' looks for anything not aeiou
+
+carat sign at beginnign of search key to say that MUST occur at beginning of string
+Dollar sign says that search key MUST occur at the end
+
+re.DOTALL or re.I as second argument to re.compile( r'###', re.I) to make . Inclune newline(\n\) or ignore case respectively
+
+re.verbose as second argument to re.compile to make it ignore spaces.
+		This alows you to tab out lines to make complex regex more readable.

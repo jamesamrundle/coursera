@@ -1,0 +1,18 @@
+print ("Hello there! What would you like to be called?")
+myName = input()
+print ("OK! " + myName + " Would you like to know how long your name is?")
+ 
+ageq = input()
+while ageq == "":
+	print ("please enter something")
+	ageq = input()
+	continue
+	
+if ageq == ("yes" or "Yes"):	
+	print ("Word " + myName + ",your name is " + str(len(myName)) + " characters long")
+	
+		
+	
+else:
+	print ("Okie dokie, sayonara!")
+	

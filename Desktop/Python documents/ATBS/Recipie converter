@@ -1,0 +1,23 @@
+flour = [("cup", 125), ("tsp", 3), ("tb",9)]
+butter = [("cup", 226), ("tsp", 5), ("tb",15)]
+sugar = [("cup", 196), ("tsp", 4), ("tb",13)]
+salt = sugar
+baking_powder = [("cup", 192), ("tsp", 4), ("tb",12)]
+baking_soda = flour
+milk = [("cup", 240), ("tsp", 5), ("tb",15)]
+
+
+print("How many ingredients are in your Recipe?")
+recipeLen = int(input())
+
+newRecipe = []
+
+print("Please type your ingredients one at a time")
+print("We will add the measurments later")
+
+for i in range(recipeLen):
+	newRecipe = newRecipe + [str(input())]
+	if i < recipeLen - 1:
+		print ("Ok, now enter the next item.")
+	
+print (newRecipe)
